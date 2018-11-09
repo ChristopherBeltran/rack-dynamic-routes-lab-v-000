@@ -10,7 +10,7 @@ class Application
     
     if req.path.match(/items/)
       search_item = req.path.split("/items/").last
-      @@items.each do |n|
+      @@items.find do |n|
         if n.name == search_item
           resp.write n.price
           resp.status = 200
