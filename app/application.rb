@@ -13,6 +13,7 @@ class Application
       @@items.each do |n|
         if n.name == search_item
           resp.write n.price
+          binding.pry
           resp.status = 200
         else
           resp.write "Item not found"
