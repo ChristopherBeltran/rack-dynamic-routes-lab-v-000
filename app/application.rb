@@ -6,8 +6,8 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     
-    case
-    when req.path.match(/items/)
+    
+    if req.path.match(/items/)
       search_item = req.path.split("/items/").last
       if @@items.include?(search_item)
         item = @@items.find{|i| i.name == search_item}
