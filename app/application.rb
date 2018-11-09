@@ -9,7 +9,6 @@ class Application
     
     
     if req.path.match(/items/)
-      resp.status = 200
       search_item = req.path.split("/items/").last
       @@items.each do |n|
         if n.name == search_item
